@@ -1,0 +1,2 @@
+pdfplumber>=0.10
+python-pptx>=0.6
