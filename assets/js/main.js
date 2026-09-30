@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // --- Mobile nav: clone the desktop links/actions into a stacked panel ---
   var toggle = document.getElementById('navToggle');
   var mobilePanel = document.getElementById('navLinksMobile');
   if (toggle && mobilePanel) {
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // --- File input: show the chosen filename ---
   document.querySelectorAll('input[type=file]').forEach(function (input) {
     var hint = input.parentElement.querySelector('.file-name-hint');
     input.addEventListener('change', function () {
@@ -32,14 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // --- Filter bar: submit on change so results update immediately ---
   document.querySelectorAll('.filter-bar[data-autosubmit]').forEach(function (form) {
     form.querySelectorAll('select, input[type=text]').forEach(function (el) {
       el.addEventListener('change', function () { form.submit(); });
     });
   });
 
-  // --- Confirm before destructive actions ---
   document.querySelectorAll('[data-confirm]').forEach(function (el) {
     el.addEventListener('submit', function (e) {
       if (!confirm(el.getAttribute('data-confirm'))) e.preventDefault();

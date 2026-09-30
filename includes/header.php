@@ -1,8 +1,4 @@
 <?php
-/**
- * Shared <head> + nav. Include after config/auth are loaded.
- * Optional $page_title variable may be set before including.
- */
 $founder = current_founder();
 $investor = current_investor();
 $title = isset($page_title) ? $page_title . ' · ' . APP_NAME : APP_NAME . ' — Where startups meet the right investors';

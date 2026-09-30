@@ -1,9 +1,4 @@
 <?php
-/**
- * Auth helpers. Two independent session identities can exist:
- *   $_SESSION['founder']  = ['id'=>, 'full_name'=>, 'email'=>]
- *   $_SESSION['investor'] = ['id'=>, 'full_name'=>, 'email'=>, 'firm_name'=>]
- */
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/functions.php';
 

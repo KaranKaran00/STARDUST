@@ -8,7 +8,6 @@ $stmt->execute([(int) ($_GET['id'] ?? 0)]);
 $pitch = $stmt->fetch();
 if (!$pitch) { flash('error', 'Pitch not found.'); redirect(BASE_URL . '/admin/dashboard.php'); }
 
-// ---- Handle actions ----
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     verify_csrf();
 

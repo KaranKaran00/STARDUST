@@ -8,7 +8,6 @@ $stmt->execute([(int) ($_GET['id'] ?? 0), $founder['id']]);
 $pitch = $stmt->fetch();
 if (!$pitch) { flash('error', 'Pitch not found.'); redirect(BASE_URL . '/founder/dashboard.php'); }
 
-// Respond to a meeting request
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['meeting_id'])) {
     verify_csrf();
     $action = $_POST['action'] === 'confirm' ? 'confirmed' : 'declined';

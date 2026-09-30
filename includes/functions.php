@@ -1,7 +1,4 @@
 <?php
-/**
- * Shared helper functions.
- */
 
 function e(?string $str): string
 {
@@ -50,7 +47,6 @@ function redirect(string $path): void
     exit;
 }
 
-/** Format money like ₹5,00,000 */
 function money(int $amount): string
 {
     return '₹' . number_format($amount);
@@ -77,7 +73,6 @@ function status_label(string $status): string
     };
 }
 
-/** Comma-string <-> array helpers for the preference / tag fields */
 function csv_to_array(?string $csv): array
 {
     if (!$csv) return [];
@@ -89,12 +84,6 @@ function array_to_csv(array $arr): string
     return implode(',', array_filter(array_map('trim', $arr)));
 }
 
-/**
- * Runs the Python deck analyzer on an uploaded file and returns
- * ['excerpt' => string, 'keywords' => string]. Never throws — on any
- * failure (python missing, libs missing, bad file) it just returns
- * empty strings so the upload flow is never blocked by this step.
- */
 function analyze_deck_file(string $absolutePath, string $ext): array
 {
     $fallback = ['excerpt' => '', 'keywords' => ''];

@@ -3,10 +3,6 @@ require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../includes/auth.php';
 $investor = require_investor();
 
-$INDUSTRIES = ['SaaS', 'Fintech', 'HealthTech', 'EdTech', 'E-commerce', 'AgriTech', 'CleanTech', 'AI/ML', 'Consumer', 'DeepTech'];
-$STAGES = ['Idea', 'Pre-seed', 'Seed', 'Series A', 'Series B+'];
-$MODELS = ['Subscription', 'Marketplace', 'D2C', 'B2B', 'Freemium', 'Transactional'];
-
 $stmt = db()->prepare('SELECT * FROM investor_preferences WHERE investor_id = ?');
 $stmt->execute([$investor['id']]);
 $prefs = $stmt->fetch();

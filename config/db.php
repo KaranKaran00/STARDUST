@@ -1,7 +1,4 @@
 <?php
-/**
- * PDO database connection, shared everywhere via require.
- */
 require_once __DIR__ . '/config.php';
 
 function db(): PDO

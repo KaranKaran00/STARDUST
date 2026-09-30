@@ -1,18 +1,4 @@
 #!/usr/bin/env python3
-"""
-analyze_deck.py — Stardust deck analyzer.
-
-Called by PHP right after a founder uploads a pitch deck:
-    python3 analyze_deck.py /path/to/deck.pdf pdf
-
-Prints a single JSON object to stdout:
-    {"excerpt": "...", "keywords": "term1, term2, ...", "error": null}
-
-Designed to degrade gracefully: if pdfplumber / python-pptx aren't
-installed, or the file can't be parsed, it still returns valid JSON
-(with an "error" note) instead of crashing the PHP caller.
-"""
-
 import sys
 import json
 import re

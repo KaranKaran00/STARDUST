@@ -2,7 +2,6 @@
 require_once __DIR__ . '/config/db.php';
 require_once __DIR__ . '/includes/auth.php';
 
-// Light stats for the hero — quietly fails to zero if DB isn't set up yet.
 try {
     $pdo = db();
     $founderCount = (int) $pdo->query("SELECT COUNT(*) FROM founders")->fetchColumn();
@@ -58,7 +57,6 @@ require __DIR__ . '/includes/header.php';
       </div>
     </div>
 
-    <!-- Hero Image -->
     <div class="hero-blob">
       <div class="hero-blob-inner">
         <img
